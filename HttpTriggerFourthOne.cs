@@ -12,9 +12,9 @@ using Newtonsoft.Json;
 
 namespace Company.Function
 {
-    public static class HttpTriggerAnotherOne
+    public static class HttpTriggerFourthOne
     {
-        [FunctionName("HttpTriggerAnotherOne")]
+        [FunctionName("HttpTriggerFourthOne")]
         public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequest req, ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -26,7 +26,7 @@ namespace Company.Function
             name = name ?? data?.name;
 
             return name != null
-                ? (ActionResult)new OkObjectResult($"Hello, {name}. (2nd Function)")
+                ? (ActionResult)new OkObjectResult($"Hello, {name}. (4th Function)")
                 : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
         }
     }
